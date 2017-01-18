@@ -1,0 +1,94 @@
+doctype html
+extends layout
+
+block signout
+  a.logoutLblPos(href="/logout") Use a different API key and Auth Token
+block content 
+   
+    // stylesheets
+    link(rel='stylesheet',href='assets/fonts/font-roboto.css')
+    link(rel='stylesheet',href='assets/bootstrap/bootstrap4-alpha3.min.css')
+    link(rel='stylesheet',href='assets/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet',href='assets/web-analytics/style.css')
+    // scripts
+    script(type='text/javascript',src='assets/jquery/jquery-3.1.0.min.js')
+    script(type='text/javascript',src='assets/tether/tether.min.js')
+    script(type='text/javascript',src='assets/bootstrap/bootstrap4-alpha3.min.js')
+    script(type='text/javascript', src='js/realtime/canvasjs.min.js')
+    script(type='text/javascript',src='assets/web-analytics/real-time.js')
+  body
+    // header
+    nav#header.navbar.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          #sidebar-toggle-button
+            i.fa.fa-bars(aria-hidden='true')
+          .brand
+            a(href='web-analytics-real-time.html')
+              span.hidden-xs-down.m-r-3 Web Analytics 
+              span.lead Real Time
+    // /header
+    // sidebar
+    #sidebar.sidebar-toggle
+      ul.nav.nav-sidebar
+        li
+          a.active(href='web-analytics-real-time.html')
+            i.fa.fa-clock-o.fa-lg.fa-fw(aria-hidden='true')
+            span Real Time
+        li.divider(role='separator')
+        li
+          a(href='web-analytics-overview.html')
+            i.fa.fa-newspaper-o.fa-lg.fa-fw(aria-hidden='true')
+            span Historical
+        li.divider(role='separator')
+    // /sidebar
+    // page-content-wrapper
+    #page-content-wrapper.page-content-toggle
+      .container-fluid
+        // 1st row
+        .row.m-b-2
+          .col-lg-4
+            .card.card-block
+              h4.card-title Voltage
+              #users-device-doughnut-chart
+          .col-lg-4
+            .card.card-block
+              h4.card-title Current
+              #users-medium-pie-chart
+          .col-lg-4
+            .card.card-block
+              h4.card-title Drill Angle
+              #users-category-pie-chart
+        // /1st row
+        // 2nd row
+        .row
+          .col-lg-6
+            .card.card-block
+              h4.card-title.m-b-2 Energy Per Minute
+              #page-views-per-minute-column-chart
+          .col-lg-6
+            .card.card-block
+              h4.card-title.m-b-2 Power Per Second
+              #page-views-per-second-column-chart
+        // /2nd row
+        // 3rd row
+        .row
+          .col-md-12
+            .card.card-block
+              h4.card-title Location
+              #users-state-bar-chart
+        // /3rd row
+      // /.container-fluid
+    // /page-content-wrapper
+  script(type='text/javascript',src='assets/jquery/jquery-3.1.0.min.js')
+  script(type='text/javascript',src='assets/tether/tether.min.js')
+  script(type='text/javascript',src='assets/bootstrap/bootstrap4-alpha3.min.js')
+  script(type='text/javascript', src='js/realtime/myrealtime.js')
+  script(type='text/javascript', src='js/realtime/canvasjs.min.js')
+  script(type='text/javascript', src='js/realtime/mqttws31.js')
+  script(type='text/javascript', src='js/realtime/realtime.js')
+  script(type='text/javascript', src='js/realtime/realtimeGraph.js')
+  script(type='text/javascript', src='js/historian/historian.js')
+  script(type='text/javascript', src='js/historian/historianGraph.js')
+  script(type='text/javascript', src='js/uicontroller.js')
+  script(type='text/javascript', src='js/uicontroller.js')
